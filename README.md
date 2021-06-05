@@ -50,11 +50,10 @@ kubectl get pods
 NAME                                              READY   STATUS    RESTARTS   AGE
 -------------------------------------------------------------------------------------
 spring-boot-kubernetes-example                    1/1     Running   0          12m
--------------------------------------------------------------------------------------
 spring-boot-kubernetes-example-59877d454b-hkmvp   1/1     Running   0          3m42s
 
 To Access the Application we need to create a service of type Load Balancer
--------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 kubectl expose deployment spring-boot-kubernetes-example --type=LoadBalancer --port=8080
 
 Lists Services Information
@@ -64,7 +63,6 @@ kubectl get services
 NAME                             TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)          AGE
 -----------------------------------------------------------------------------------------------------
 kubernetes                       ClusterIP      10.116.0.1      <none>         443/TCP          87m
------------------------------------------------------------------------------------------------------
 spring-boot-kubernetes-example   LoadBalancer   10.116.15.106   35.194.14.85   8080:32660/TCP   108s
 
 
@@ -81,9 +79,6 @@ kubectl get pods
 NAME                                              READY   STATUS    RESTARTS   AGE
 -----------------------------------------------------------------------------------
 spring-boot-kubernetes-example                    1/1     Running   0          26m
------------------------------------------------------------------------------------
 spring-boot-kubernetes-example-59877d454b-86n99   1/1     Running   0          17s
------------------------------------------------------------------------------------
 spring-boot-kubernetes-example-59877d454b-bczw6   1/1     Running   0          17s
------------------------------------------------------------------------------------
 spring-boot-kubernetes-example-59877d454b-hkmvp   1/1     Running   0          17m
