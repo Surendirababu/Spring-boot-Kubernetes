@@ -13,4 +13,19 @@ spec:
         - name: spring-boot-kubernetes-example
           image: 'gcr.io/bold-site-315415/spring-boot-kubernetes-example:v1'
           ports:
-              - containerPort: 8080 
+              - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-kubernetes-example-service
+  labels:
+    name: spring-boot-kubernetes-example-service
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: spring-boot-kubernetes-example
+  type: LoadBalancer 
