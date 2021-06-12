@@ -82,3 +82,24 @@ spring-boot-kubernetes-example                    1/1     Running   0          2
 spring-boot-kubernetes-example-59877d454b-86n99   1/1     Running   0          17s
 spring-boot-kubernetes-example-59877d454b-bczw6   1/1     Running   0          17s
 spring-boot-kubernetes-example-59877d454b-hkmvp   1/1     Running   0          17m
+ 
+
+Delete deployments
+------------------
+kubectl delete deployments --all
+ 
+Delete Pods
+----------- 
+kubectl delete pods --all
+ 
+Delete Services
+---------------
+kubectl delete svc --all
+ 
+Create a deployment
+--------------------------------
+kubectl create deployment spring-boot-kubernetes-example --image=gcr.io/bold-site-315415/spring-boot-kubernetes-example:v1
+
+Apply deployment
+----------------
+kubectl apply -f deployment2.yml --validate=false
